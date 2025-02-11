@@ -30,9 +30,9 @@ def post_detail(request, post_id):
                   {'post': get_object_or_404(
                       posts_filter(
                           Post.objects.select_related(
-                                'category', 'location', 'author'
+                              'category', 'location', 'author'
                           )
-                        ),
+                      ),
                       id=post_id
                   )
                   })
@@ -48,6 +48,6 @@ def category_posts(request, category_slug):
                   {'category': category,
                    'post_list': posts_filter(
                        category.category_posts.select_related(
-                            'category', 'location', 'author'
+                           'category', 'location', 'author'
                        )
                    )})
